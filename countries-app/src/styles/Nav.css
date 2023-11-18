@@ -1,0 +1,12 @@
+.Nav {
+  display: flex;
+  height: 5rem;
+  background-color: darkgrey;
+}
+.Nav h2 {
+  margin: 0;
+  height: 2rem;
+  font-size: 24px;
+}
+
+/*# sourceMappingURL=Nav.css.map */
