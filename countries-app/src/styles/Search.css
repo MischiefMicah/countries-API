@@ -1,0 +1,23 @@
+.Search {
+  margin: 2rem 1rem 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+.Search input {
+  border: none;
+  border-radius: 0.5rem;
+  width: 95%;
+  margin: auto;
+  padding: 1.2rem;
+  text-indent: 3.5rem;
+  background-image: url(./icons/search-outline.svg);
+  background-position: 2rem;
+  background-size: 1.2rem;
+  background-repeat: no-repeat;
+  color: hsl(0, 0%, 52%);
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
+  filter: drop-shadow(0px 5px 10px #e9e9e9);
+}
+
+/*# sourceMappingURL=Search.css.map */
