@@ -1,0 +1,22 @@
+@use './colors.scss';
+@use './font.scss';
+
+.cardsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 70%;
+
+    .cardFlag {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
