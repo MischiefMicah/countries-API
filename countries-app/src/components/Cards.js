@@ -9,19 +9,19 @@ function Cards() {
                     return (
                         <div className="card" key={key}>
                             <div className="cardFlag">
-                                <img src={data.flags.svg}></img>
+                                <img src={data.flags.svg} alt="Country's flag"></img>
                             </div>
                             <div className="cardName">
                                 {data.name}
                             </div>
                             <div className="cardPop">
-                                {data.population}
+                                Population: <span>{data.population}</span>
                             </div>
                             <div className="cardReg">
-                                {data.region}
+                                Region: <span>{data.region}</span>
                             </div>
                             <div className="cardCap">
-                                {data.capital}
+                                Capital: <span>{data.capital}</span>
                             </div>
                         </div>
                     )
