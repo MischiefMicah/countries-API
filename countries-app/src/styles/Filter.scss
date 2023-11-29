@@ -3,6 +3,7 @@
 
 .Filter {
     margin: 2rem 1rem 2rem 1rem;
+    position: relative;
 
     button {
         border: none;
@@ -24,6 +25,9 @@
 }
 
 .dropDwn {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
     padding: 1rem 0 1rem 1.5rem;
     background-color: colors.$lgtMdEle;
     width: 11.1rem;
@@ -37,4 +41,8 @@
         font-size: 14px;
         @include font.fontSemiBld;
     }
+}
+
+.show {
+    display: block;
 }

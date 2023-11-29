@@ -1,5 +1,6 @@
 .Filter {
   margin: 2rem 1rem 2rem 1rem;
+  position: relative;
 }
 .Filter button {
   border: none;
@@ -20,6 +21,9 @@
 }
 
 .dropDwn {
+  display: none;
+  position: absolute;
+  top: 2.5rem;
   padding: 1rem 0 1rem 1.5rem;
   background-color: hsl(0, 0%, 100%);
   width: 11.1rem;
@@ -33,6 +37,10 @@
   font-size: 14px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
+}
+
+.show {
+  display: block;
 }
 
 /*# sourceMappingURL=Filter.css.map */
