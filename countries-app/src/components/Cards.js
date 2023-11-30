@@ -1,6 +1,10 @@
 import countData from '../data.json'
 import '../styles/Cards.css'
 
+function numCommas (arg){
+    return arg.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function Cards() {
     return (
         <div>
@@ -15,7 +19,7 @@ function Cards() {
                                 {data.name}
                             </div>
                             <div className="cardPop">
-                                Population: <span>{data.population}</span>
+                                Population: <span>{numCommas(data.population)}</span>
                             </div>
                             <div className="cardReg">
                                 Region: <span>{data.region}</span>
