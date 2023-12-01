@@ -1,12 +1,13 @@
 import '../styles/Search.css'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { SearchContext } from '../contexts/SearchContext'
 
 
 function Search() {
-    const [inputTxt, setInputTxt] = useState('')
+    const {setInputTxt} = useContext(SearchContext)
 
     function searchChange(e) {
-        
+        setInputTxt(e.currentTarget.value.toLowerCase())
     }
     
     return (

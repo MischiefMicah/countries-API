@@ -1,15 +1,30 @@
 import countData from '../data.json'
 import '../styles/Cards.css'
+import { useContext } from 'react'
+import { SearchContext } from '../contexts/SearchContext'
 
-function numCommas (arg){
-    return arg.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+
 
 function Cards() {
+
+    const {inputTxt} = useContext(SearchContext)
+
+    function numCommas (arg){
+        return arg.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    
+    const filterData = countData.filter((country) => {
+        if (inputTxt === '') {
+            return country
+        } else {
+            return country.name.toLowerCase().includes(inputTxt)
+        }
+    })
+
     return (
         <div>
             <div className="cardsContainer">
-                {countData.map((data, key) => {
+                {filterData.map((data, key) => {
                     return (
                         <div className="card" key={key}>
                             <div className="cardFlag">
