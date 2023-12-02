@@ -7,17 +7,25 @@ import { SearchContext } from '../contexts/SearchContext'
 
 function Cards() {
 
-    const {inputTxt} = useContext(SearchContext)
+    const {inputTxt, dropFil} = useContext(SearchContext)
 
     function numCommas (arg){
         return arg.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     
     const filterData = countData.filter((country) => {
-        if (inputTxt === '') {
-            return country
+        if (dropFil === '') {
+            if (inputTxt === '') {
+                return country
+            } else {
+                return country.name.toLowerCase().includes(inputTxt)
+            }
         } else {
-            return country.name.toLowerCase().includes(inputTxt)
+            if (inputTxt === '') {
+                return country.region.toLowerCase().includes(dropFil)
+            } else if (country.name.toLowerCase().includes(inputTxt) && country.region.toLowerCase().includes(dropFil)){
+                return country
+            }
         }
     })
 

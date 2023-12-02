@@ -47,3 +47,8 @@
 .show {
     display: block;
 }
+
+.liBlue {
+    color: rgb(0, 89, 255) !important;
+    filter: brightness(200%) blur(0.4px);
+}

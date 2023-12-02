@@ -10,11 +10,12 @@ import { useState } from 'react'
 function App() {
 
   const [inputTxt, setInputTxt] = useState('')
+  const [dropFil, setDropFil] = useState('')
 
   return (
     <div className="App">
       <Nav />
-      <SearchContext.Provider value={{inputTxt, setInputTxt}}>
+      <SearchContext.Provider value={{inputTxt, setInputTxt, dropFil, setDropFil}}>
         <Search />
         <Filter />
         <Cards />

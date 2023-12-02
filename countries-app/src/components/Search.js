@@ -1,5 +1,5 @@
 import '../styles/Search.css'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { SearchContext } from '../contexts/SearchContext'
 
 
