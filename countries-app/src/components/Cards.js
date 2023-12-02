@@ -2,11 +2,14 @@ import countData from '../data.json'
 import '../styles/Cards.css'
 import { useContext } from 'react'
 import { SearchContext } from '../contexts/SearchContext'
+import { useNavigate, useParams } from 'react-router-dom'
 
 
 
 function Cards() {
 
+    let navigate = useNavigate()
+    let {} = useParams()
     const {inputTxt, dropFil} = useContext(SearchContext)
 
     function numCommas (arg){
@@ -34,7 +37,9 @@ function Cards() {
             <div className="cardsContainer">
                 {filterData.map((data, key) => {
                     return (
-                        <div className="card" key={key}>
+                        <div className="card" key={key} onClick={() => {
+                                navigate(`/card/${data.name}`, {state: {data:data}})
+                            }}>
                             <div className="cardFlag">
                                 <img src={data.flags.svg} alt="Country's flag"></img>
                             </div>

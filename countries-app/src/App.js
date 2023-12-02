@@ -1,10 +1,10 @@
 import './styles/App.css';
 import Nav from './components/Nav'
-import Search from './components/Search'
-import Filter from './components/Filter'
-import Cards from './components/Cards'
+import Home from './components/Home'
+import CardDetail from './components/CardDetail'
 import { SearchContext } from './contexts/SearchContext'
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 function App() {
@@ -13,14 +13,17 @@ function App() {
   const [dropFil, setDropFil] = useState('')
 
   return (
-    <div className="App">
-      <Nav />
-      <SearchContext.Provider value={{inputTxt, setInputTxt, dropFil, setDropFil}}>
-        <Search />
-        <Filter />
-        <Cards />
-      </SearchContext.Provider>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Nav />
+        <SearchContext.Provider value={{inputTxt, setInputTxt, dropFil, setDropFil}}>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/card/:country' element={<CardDetail />} />
+          </Routes>
+        </SearchContext.Provider>
+      </div>
+    </BrowserRouter>
   );
 }
 
