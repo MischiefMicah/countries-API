@@ -11,10 +11,12 @@ function Filter() {
         const dropDwn = document.querySelector(".dropDwn")
         if (dropDwn.classList.contains("show")) {
             dropDwn.classList.remove("show")
-        } else dropDwn.classList.add("show")
+        } else {
+            dropDwn.classList.add("show")
+        }
     }
 
-    function liClickHandler(e){
+    const liClickHandler = (e) =>{
         if (e.currentTarget.classList.contains('liBlue')) {
             document.querySelectorAll('ul.dropDwn > li').forEach((li) => li.classList.remove('liBlue'))
             setDropFil('')
@@ -25,17 +27,16 @@ function Filter() {
         }
     }
 
-    document.querySelectorAll('ul.dropDwn > li').forEach((li) => li.onclick=liClickHandler)
+    const regions = ['Africa','America','Asia','Europe','Oceania']
+    const liBuild = regions.map((region) => {
+        return <li onClick={liClickHandler}>{region}</li>
+    })
     
     return (
         <div className="Filter">
-            <button onClick={dropDwnFunc}>Filter by Region<img src={downSvg}></img></button>
+            <button onClick={dropDwnFunc}>Filter by Region<img src={downSvg} alt='Drop down arrow'></img></button>
             <ul className="dropDwn">
-                <li>Africa</li>
-                <li>America</li>
-                <li>Asia</li>
-                <li>Europe</li>
-                <li>Oceania</li>
+                {liBuild}
             </ul>
         </div>
     )
