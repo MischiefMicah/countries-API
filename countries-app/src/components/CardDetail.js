@@ -1,9 +1,10 @@
 import { useContext } from 'react'
 import { SearchContext } from '../contexts/SearchContext'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
 function CardDetail() {
     let navigate = useNavigate()
+    let {} = useParams()
     const location = useLocation()
     const data = location.state.data
     const allData = location.state.allData
@@ -26,7 +27,7 @@ function CardDetail() {
                     borders.map((code) => {
                         return data.map((country, key) => {
                             if (country.alpha3Code === code) {
-                                return <li key={key} onClick={() => navigate(`/card/${country.name}`)}>{country.name}</li>
+                                return <li key={key} onClick={() => navigate(`/card/${country.name}`, {state: {data:country, allData:allData}})}>{country.name}</li>
                             }
                         })
                     })
@@ -37,7 +38,7 @@ function CardDetail() {
 
 
     }
-    console.log(location.state.allData)
+    
     return (
         <div>
             <button onClick={() => {navigate('/')}}><img/>Back</button>
