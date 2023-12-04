@@ -28,8 +28,8 @@ function Filter() {
     }
 
     const regions = ['Africa','America','Asia','Europe','Oceania']
-    const liBuild = regions.map((region) => {
-        return <li onClick={liClickHandler}>{region}</li>
+    const liBuild = regions.map((region, key) => {
+        return <li key={key} onClick={liClickHandler}>{region}</li>
     })
     
     return (

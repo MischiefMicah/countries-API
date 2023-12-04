@@ -38,7 +38,7 @@ function Cards() {
                 {filterData.map((data, key) => {
                     return (
                         <div className="card" key={key} onClick={() => {
-                                navigate(`/card/${data.name}`, {state: {data:data}})
+                                navigate(`/card/${data.name}`, {state: {data:data, allData:countData}})
                             }}>
                             <div className="cardFlag">
                                 <img src={data.flags.svg} alt="Country's flag"></img>
