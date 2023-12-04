@@ -1,8 +1,9 @@
 import { useContext } from 'react'
 import { SearchContext } from '../contexts/SearchContext'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 function CardDetail() {
+    let navigate = useNavigate()
     const location = useLocation()
     const data = location.state.data
     const allData = location.state.allData
@@ -17,12 +18,29 @@ function CardDetail() {
             }))
     }
     const deBorders = (borders, data) => {
-        
+        return (
+            <div>
+                <h2>Border Countries:</h2>
+                <ul>
+                    {
+                    borders.map((code) => {
+                        return data.map((country, key) => {
+                            if (country.alpha3Code === code) {
+                                return <li key={key} onClick={() => navigate(`/card/${country.name}`)}>{country.name}</li>
+                            }
+                        })
+                    })
+                    }
+                </ul>
+            </div>
+        )
+
+
     }
     console.log(location.state.allData)
     return (
         <div>
-            <button><img/>Back</button>
+            <button onClick={() => {navigate('/')}}><img/>Back</button>
             <div className='deFlag'><img  src={data.flags.svg} alt={`${data.name}'s' flag`}/></div>
             <div className='deTop'>
                 <div className='deName'>{data.name}</div>
@@ -37,7 +55,7 @@ function CardDetail() {
                 <div className='deCurr'>Currencies: {mapData(data.currencies)}</div>
                 <div className='deLang'>Languages: {mapData(data.languages)}</div>
             </div>
-            {data.borders === undefined ? deBorders(data.borders, allData) : console.log('no borders')}
+            {data.borders === undefined ? console.log('no borders') : deBorders(data.borders, allData)}
         </div>
     )
 }
