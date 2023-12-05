@@ -1,5 +1,6 @@
 import { useLocation, useNavigate} from 'react-router-dom'
 import '../styles/CardDetail.css'
+import backSVG from '../styles/icons/arrow-back-outline.svg'
 
 function CardDetail() {
     let navigate = useNavigate()
@@ -39,7 +40,7 @@ function CardDetail() {
     }
     return (
         <div className='CardDetail'>
-            <button onClick={() => {navigate('/')}}><img/>Back</button>
+            <button onClick={() => {navigate('/')}}><img src={backSVG} alt='Back arrow'/>Back</button>
             <div className='deFlag'><img  src={data.flags.svg} alt={`${data.name}'s' flag`}/></div>
             <div className='deTop'>
                 <div className='deName'>{data.name}</div>
