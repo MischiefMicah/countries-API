@@ -1,0 +1,68 @@
+.CardDetail {
+  margin: 2rem;
+}
+
+.deFlag {
+  margin: 2rem 0;
+  width: 100%;
+}
+.deFlag img {
+  width: 100%;
+}
+
+.deName {
+  margin: 2rem 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.deNatName, .dePop, .deReg, .deSubReg, .deCap, .deDom, .deCurr, .deLang {
+  margin: 0.7rem 0;
+  font-size: 16px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+}
+.deNatName span, .dePop span, .deReg span, .deSubReg span, .deCap span, .deDom span, .deCurr span, .deLang span {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
+}
+
+.deBot {
+  margin: 3rem 0;
+}
+
+.deBorder h2 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.borderList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+  font-size: 14px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
+}
+.borderList li {
+  margin: 0.5rem auto;
+  padding: 0.5rem 0.5rem;
+  width: 27%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  list-style-type: none;
+  background-color: hsl(0, 0%, 100%);
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(112, 112, 112, 0.2);
+  box-shadow: 0px 0px 6px 0px rgba(112, 112, 112, 0.2);
+}
+
+/*# sourceMappingURL=CardDetail.css.map */

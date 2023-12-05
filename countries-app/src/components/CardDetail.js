@@ -1,10 +1,8 @@
-import { useContext } from 'react'
-import { SearchContext } from '../contexts/SearchContext'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { useLocation, useNavigate} from 'react-router-dom'
+import '../styles/CardDetail.css'
 
 function CardDetail() {
     let navigate = useNavigate()
-    let {} = useParams()
     const location = useLocation()
     const data = location.state.data
     const allData = location.state.allData
@@ -18,11 +16,14 @@ function CardDetail() {
                 }
             }))
     }
+    const numCommas = (arg) => {
+        return arg.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
     const deBorders = (borders, data) => {
         return (
-            <div>
+            <div className='deBorder'>
                 <h2>Border Countries:</h2>
-                <ul>
+                <ul className='borderList'>
                     {
                     borders.map((code) => {
                         return data.map((country, key) => {
@@ -35,26 +36,23 @@ function CardDetail() {
                 </ul>
             </div>
         )
-
-
     }
-    
     return (
-        <div>
+        <div className='CardDetail'>
             <button onClick={() => {navigate('/')}}><img/>Back</button>
             <div className='deFlag'><img  src={data.flags.svg} alt={`${data.name}'s' flag`}/></div>
             <div className='deTop'>
                 <div className='deName'>{data.name}</div>
-                <div className='deNatName'>Native Name: {data.nativeName}</div>
-                <div className='dePop'>Population: {data.population}</div>
-                <div className='deReg'>Region: {data.region}</div>
-                <div className='deSubReg'>Sub Region: {data.subregion}</div>
-                <div className='deCap'>Capital: {data.capital}</div>
+                <div className='deNatName'>Native Name: <span>{data.nativeName}</span></div>
+                <div className='dePop'>Population: <span>{numCommas(data.population)}</span></div>
+                <div className='deReg'>Region: <span>{data.region}</span></div>
+                <div className='deSubReg'>Sub Region: <span>{data.subregion}</span></div>
+                <div className='deCap'>Capital: <span>{data.capital}</span></div>
             </div>
             <div className='deBot'>
-                <div className='deDom'>Top Level Domain: {data.topLevelDomain}</div>
-                <div className='deCurr'>Currencies: {mapData(data.currencies)}</div>
-                <div className='deLang'>Languages: {mapData(data.languages)}</div>
+                <div className='deDom'>Top Level Domain: <span>{data.topLevelDomain}</span></div>
+                <div className='deCurr'>Currencies: <span>{mapData(data.currencies)}</span></div>
+                <div className='deLang'>Languages: <span>{mapData(data.languages)}</span></div>
             </div>
             {data.borders === undefined ? console.log('no borders') : deBorders(data.borders, allData)}
         </div>
