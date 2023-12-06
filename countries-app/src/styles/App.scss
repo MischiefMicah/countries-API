@@ -4,3 +4,11 @@
     height: 100%;
     background-color: colors.$lgtMdBg;
 }
+
+.light {
+    @include colors.lightMode();
+}
+
+.dark {
+    @include colors.darkMode();
+}

@@ -10,7 +10,7 @@ function Cards() {
 
     let navigate = useNavigate()
     let {} = useParams()
-    const {inputTxt, dropFil} = useContext(SearchContext)
+    const {inputTxt, dropFil, theme} = useContext(SearchContext)
 
     function numCommas (arg){
         return arg.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

@@ -4,7 +4,7 @@ import { SearchContext } from '../contexts/SearchContext'
 
 
 function Search() {
-    const {setInputTxt} = useContext(SearchContext)
+    const {setInputTxt, theme} = useContext(SearchContext)
 
     function searchChange(e) {
         setInputTxt(e.currentTarget.value.toLowerCase())
@@ -13,7 +13,7 @@ function Search() {
     return (
         <div className="Search">
             <label htmlFor="searchInput"></label>
-            <input type="text" placeholder="Search for a country..." name="searchInput" maxLength="40" onChange={searchChange}></input>
+            <input className={theme === 'light' ? 'light' : 'dark'} type="text" placeholder="Search for a country..." name="searchInput" maxLength="40" onChange={searchChange}></input>
         </div>
     )
 }

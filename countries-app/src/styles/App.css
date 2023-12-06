@@ -3,4 +3,14 @@
   background-color: hsl(0, 0%, 98%);
 }
 
+.light {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(200, 15%, 8%);
+}
+
+.dark {
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+}
+
 /*# sourceMappingURL=App.css.map */

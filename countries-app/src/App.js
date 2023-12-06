@@ -11,12 +11,13 @@ function App() {
 
   const [inputTxt, setInputTxt] = useState('')
   const [dropFil, setDropFil] = useState('')
+  const [theme, setTheme] = useState('light')
 
   return (
     <BrowserRouter>
       <div className="App">
-        <Nav />
-        <SearchContext.Provider value={{inputTxt, setInputTxt, dropFil, setDropFil}}>
+        <SearchContext.Provider value={{inputTxt, setInputTxt, dropFil, setDropFil, theme, setTheme}}>
+          <Nav />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/card/:country' element={<CardDetail />} />

@@ -5,7 +5,7 @@ import { useContext } from 'react'
 
 function Filter() {
 
-    const {setDropFil} = useContext(SearchContext)
+    const {setDropFil, theme} = useContext(SearchContext)
 
     const dropDwnFunc = () => {
         const dropDwn = document.querySelector(".dropDwn")
@@ -33,9 +33,9 @@ function Filter() {
     })
     
     return (
-        <div className="Filter">
-            <button onClick={dropDwnFunc}>Filter by Region<img src={downSvg} alt='Drop down arrow'></img></button>
-            <ul className="dropDwn">
+        <div className='Filter'>
+            <button className={`${theme === 'light' ? 'light' : 'darkFilter'}`} onClick={dropDwnFunc}>Filter by Region<img src={downSvg} alt='Drop down arrow'></img></button>
+            <ul className={`dropDwn ${theme === 'light' ? 'light' : 'dark'}`}>
                 {liBuild}
             </ul>
         </div>

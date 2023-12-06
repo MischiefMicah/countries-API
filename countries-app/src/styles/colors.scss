@@ -6,3 +6,13 @@ $lgtMdTxt: hsl(200, 15%, 8%);
 $lgtMdIput: hsl(0, 0%, 52%);
 $lgtMdBg: hsl(0, 0%, 98%);
 $lgtMdEle: hsl(0, 0%, 100%);
+
+@mixin lightMode() {
+        background-color: $lgtMdEle;
+        color: $lgtMdTxt;
+}
+
+@mixin darkMode() {
+    background-color: $drkMdEle;
+    color: $drkMdTxt;
+}
