@@ -22,7 +22,8 @@
 }
 
 .lightSearch {
-    @include colors.lightMode();
+    background-color: colors.$lgtMdEle;
+    color: colors.$lgtMdIput;
     background-image: url(./icons/search-outline.svg);
 }
 
