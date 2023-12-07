@@ -27,10 +27,15 @@
 
     .cardFlag {
         width: 100%;
+        height: 8rem;
+        border-radius: 0.5rem 0.5rem 0rem 0rem;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         img {
-            width: 100%;
-            border-radius: 0.5rem 0.5rem 0rem 0rem;
+            width: 16rem;
         }
     }
 
@@ -48,5 +53,19 @@
 
     .cardCap {
         margin-bottom: 2.5rem;
+    }
+}
+
+@media (min-width: 700px) {
+    .cardsContainer {
+        width: 90%;
+        margin: 0 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .card {
+        margin: 1.5rem 1rem;
     }
 }
