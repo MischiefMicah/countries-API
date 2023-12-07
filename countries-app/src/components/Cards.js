@@ -37,7 +37,7 @@ function Cards() {
             <div className="cardsContainer">
                 {filterData.map((data, key) => {
                     return (
-                        <div className="card" key={key} onClick={() => {
+                        <div className={`card ${theme === 'light' ? 'light' : 'dark'}`} key={key} onClick={() => {
                                 navigate(`/card/${data.name}`, {state: {data:data, allData:countData}})
                             }}>
                             <div className="cardFlag">

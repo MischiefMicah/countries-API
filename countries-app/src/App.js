@@ -15,7 +15,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className={`App ${theme === 'light' ? 'lightApp' : 'darkApp'}`}>
         <SearchContext.Provider value={{inputTxt, setInputTxt, dropFil, setDropFil, theme, setTheme}}>
           <Nav />
           <Routes>

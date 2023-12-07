@@ -1,11 +1,10 @@
 .CardDetail {
-  margin: 2rem;
+  margin: 2rem 2rem 0 2rem;
 }
 .CardDetail button {
   display: flex;
   justify-content: center;
   padding: 0.4rem 1.5rem;
-  background-color: hsl(0, 0%, 100%);
   border: none;
   border-radius: 3px;
   font-size: 16px;
@@ -62,7 +61,8 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 0;
+  padding: 0 0 2rem 0;
+  margin: 0;
   font-size: 14px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 300;
@@ -79,9 +79,36 @@
   text-align: center;
   justify-content: center;
   list-style-type: none;
-  background-color: hsl(0, 0%, 100%);
   -webkit-box-shadow: 0px 0px 6px 0px rgba(112, 112, 112, 0.2);
   box-shadow: 0px 0px 6px 0px rgba(112, 112, 112, 0.2);
+}
+
+.lightCardDetail {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+}
+
+.darkCardDetail {
+  background-color: hsl(207, 26%, 17%);
+  color: hsl(0, 0%, 100%);
+}
+
+.lightBorderList {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+}
+.lightBorderList li {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(200, 15%, 8%);
+}
+
+.darkBorderList {
+  background-color: hsl(207, 26%, 17%);
+  color: hsl(0, 0%, 100%);
+}
+.darkBorderList li {
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
 }
 
 /*# sourceMappingURL=CardDetail.css.map */

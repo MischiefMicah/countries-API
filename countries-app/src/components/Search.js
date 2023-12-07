@@ -13,7 +13,7 @@ function Search() {
     return (
         <div className="Search">
             <label htmlFor="searchInput"></label>
-            <input className={theme === 'light' ? 'light' : 'dark'} type="text" placeholder="Search for a country..." name="searchInput" maxLength="40" onChange={searchChange}></input>
+            <input className={theme === 'light' ? 'lightSearch' : 'darkSearch'} type="text" placeholder="Search for a country..." name="searchInput" maxLength="40" onChange={searchChange}></input>
         </div>
     )
 }

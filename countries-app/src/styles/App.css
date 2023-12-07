@@ -1,6 +1,14 @@
 .App {
+  min-height: 100vh;
   height: 100%;
+}
+
+.lightApp {
   background-color: hsl(0, 0%, 98%);
+}
+
+.darkApp {
+  background-color: hsl(207, 26%, 17%);
 }
 
 .light {

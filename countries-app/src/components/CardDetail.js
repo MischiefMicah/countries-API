@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { SearchContext } from '../contexts/SearchContext'
 import { useLocation, useNavigate} from 'react-router-dom'
 import '../styles/CardDetail.css'
 import backSVG from '../styles/icons/arrow-back-outline.svg'
@@ -7,6 +9,7 @@ function CardDetail() {
     const location = useLocation()
     const data = location.state.data
     const allData = location.state.allData
+    const {theme} = useContext(SearchContext)
     const mapData = (arg) => {
         return (
             arg.map((x, i, arr) => {
@@ -24,7 +27,7 @@ function CardDetail() {
         return (
             <div className='deBorder'>
                 <h2>Border Countries:</h2>
-                <ul className='borderList'>
+                <ul className={`borderList ${theme === 'light' ? 'lightBorderList' : 'darkBorderList'}`}>
                     {
                     borders.map((code) => {
                         return data.map((country, key) => {
@@ -39,8 +42,8 @@ function CardDetail() {
         )
     }
     return (
-        <div className='CardDetail'>
-            <button onClick={() => {navigate('/')}}><img src={backSVG} alt='Back arrow'/>Back</button>
+        <div className={`CardDetail ${theme === 'light' ? 'lightCardDetail' : 'darkCardDetail'}`}>
+            <button className={`${theme === 'light' ? 'light' : 'darkButton'}`} onClick={() => {navigate('/')}}><img src={backSVG} alt='Back arrow'/>Back</button>
             <div className='deFlag'><img  src={data.flags.svg} alt={`${data.name}'s' flag`}/></div>
             <div className='deTop'>
                 <div className='deName'>{data.name}</div>
