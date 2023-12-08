@@ -112,3 +112,37 @@
         @include colors.darkMode();
     }
 }
+
+@media (min-width: 700px) {
+    .desktop-main-wrap {
+        display: flex;
+    }
+
+    .desktop-details-wrap {
+        display: flex;
+    }
+
+    .CardDetail {
+        margin: 2rem 5rem 0 5rem;
+
+        button {
+            padding: 0.5rem 3rem;
+            margin: 5rem 0 4rem 0;
+
+            img {
+                width: 1.2rem;
+            }
+        }
+    }
+
+
+    .deFlag {
+        width: 35%;
+        height: 35rem;
+
+        img {
+            width: 100%;
+            height: 35rem;
+        }
+    }
+}

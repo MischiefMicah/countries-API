@@ -44,21 +44,25 @@ function CardDetail() {
     return (
         <div className={`CardDetail ${theme === 'light' ? 'lightCardDetail' : 'darkCardDetail'}`}>
             <button className={`${theme === 'light' ? 'light' : 'darkButton'}`} onClick={() => {navigate('/')}}><img src={backSVG} alt='Back arrow'/>Back</button>
-            <div className='deFlag'><img  src={data.flags.svg} alt={`${data.name}'s' flag`}/></div>
-            <div className='deTop'>
-                <div className='deName'>{data.name}</div>
-                <div className='deNatName'>Native Name: <span>{data.nativeName}</span></div>
-                <div className='dePop'>Population: <span>{numCommas(data.population)}</span></div>
-                <div className='deReg'>Region: <span>{data.region}</span></div>
-                <div className='deSubReg'>Sub Region: <span>{data.subregion}</span></div>
-                <div className='deCap'>Capital: <span>{data.capital}</span></div>
+            <div className='desktop-main-wrap'>
+                <div className='deFlag'><img  src={data.flags.svg} alt={`${data.name}'s' flag`}/></div>
+                <div className='desktop-details-wrap'>
+                    <div className='deTop'>
+                        <div className='deName'>{data.name}</div>
+                        <div className='deNatName'>Native Name: <span>{data.nativeName}</span></div>
+                        <div className='dePop'>Population: <span>{numCommas(data.population)}</span></div>
+                        <div className='deReg'>Region: <span>{data.region}</span></div>
+                        <div className='deSubReg'>Sub Region: <span>{data.subregion}</span></div>
+                        <div className='deCap'>Capital: <span>{data.capital}</span></div>
+                    </div>
+                    <div className='deBot'>
+                        <div className='deDom'>Top Level Domain: <span>{data.topLevelDomain}</span></div>
+                        <div className='deCurr'>Currencies: <span>{mapData(data.currencies)}</span></div>
+                        <div className='deLang'>Languages: <span>{mapData(data.languages)}</span></div>
+                    </div>
+                    {data.borders === undefined ? console.log('no borders') : deBorders(data.borders, allData)}
+                </div>
             </div>
-            <div className='deBot'>
-                <div className='deDom'>Top Level Domain: <span>{data.topLevelDomain}</span></div>
-                <div className='deCurr'>Currencies: <span>{mapData(data.currencies)}</span></div>
-                <div className='deLang'>Languages: <span>{mapData(data.languages)}</span></div>
-            </div>
-            {data.borders === undefined ? console.log('no borders') : deBorders(data.borders, allData)}
         </div>
     )
 }

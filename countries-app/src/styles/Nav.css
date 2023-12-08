@@ -16,6 +16,7 @@
 .Nav button {
   margin: 0 0.5rem 0 0.5rem;
   padding: 1rem 1rem;
+  font-size: 12px;
   display: flex;
   align-items: center;
   border: none;
@@ -38,6 +39,20 @@
 }
 .darkButton img {
   filter: invert(1);
+}
+
+@media (min-width: 700px) {
+  .Nav h2 {
+    font-size: 20px;
+    margin: 0 0.5rem 0 5rem;
+  }
+  .Nav button {
+    font-size: 16px;
+    margin: 0 5rem 0 0.5rem;
+  }
+  .Nav button img {
+    width: 1.2rem;
+  }
 }
 
 /*# sourceMappingURL=Nav.css.map */
