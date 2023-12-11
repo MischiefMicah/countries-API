@@ -15,6 +15,7 @@
         background-position: 2rem;
         background-size: 1.2rem;
         background-repeat: no-repeat;
+        font-size: 14px;
         @include font.fontReg;
         filter: drop-shadow(0px 5px 10px #3d3d3d3d);
     }
@@ -29,4 +30,14 @@
 .darkSearch {
     @include colors.darkMode();
     background-image: url(./icons/search-outline-dark.svg);
+}
+
+@media (min-width: 700px) {
+    .Search {
+        width: 40%;
+        justify-content: normal;
+        input {
+            width: 100%;
+        }
+    }
 }
