@@ -34,6 +34,7 @@
   .Search {
     width: 40%;
     justify-content: normal;
+    margin: 2rem 0;
   }
   .Search input {
     width: 100%;
